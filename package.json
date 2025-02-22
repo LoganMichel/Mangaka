@@ -1,0 +1,17 @@
+{
+  "name": "mangaka",
+  "version": "1.0.0",
+  "scripts": {
+    "start:backend": "cd backend && npm run start:dev",
+    "start:frontend": "cd frontend && ng serve",
+    "start:frontend:ssr": "cd frontend && ng serve:ssr",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:ssr": "concurrently \"npm run start:backend\" \"npm run start:frontend:ssr\"",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd backend && npm run build && cd ../frontend && ng build",
+    "build:ssr": "cd frontend && ng build && ng run frontend:server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
