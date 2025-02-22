@@ -1,1 +1,37 @@
-<h1>Tableau de bord</h1>
+<div class="flex flex-col gap-4">
+  <app-breadcrumb [data]="{'Ma collection':'/'}"></app-breadcrumb>
+  <div class="flex items-center justify-between">
+    <h1>{{ title }}</h1>
+    <div>
+      <button class="btn btn-primary">
+        <span class="material-symbols-rounded">add_circle</span>
+        Ajouter un livre</button>
+    </div>
+  </div>
+
+  <div class="card border border-base-300">
+    <div class="card-body grid grid-cols-4 gap-4">
+      <div class="card border border-base-200 shadow hover:shadow-lg p-0" *ngFor="let book of books">
+        <figure>
+          <img
+            class="aspect-9/12 w-full"
+            [src]="book.cover"
+            [alt]="book.title" />
+        </figure>
+        <div class="card-body p-4">
+          <h2>{{ book.title }}</h2>
+          <p class="badge bg-base-300">{{ book.number }} tomes</p>
+          <p class="text-sm">Progression</p>
+          <progress class="progress {{ book.progress == 100 ? 'progress-success':'' }} " value="{{ book.progress }}" max="100"></progress>
+          <div class="card-actions mt-4">
+            <button class="btn btn-primary">
+              <span class="material-symbols-rounded">menu_book</span>
+              Voir les tomes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

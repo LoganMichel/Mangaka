@@ -5,6 +5,6 @@ export const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    title: "mangaka :: Tableau de bord"
+    title: "mangaka :: Ma collection de manga"
   }
 ];

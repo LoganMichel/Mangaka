@@ -1,0 +1,7 @@
+<div class="breadcrumbs text-sm">
+  <ul>
+    <li *ngFor="let item of data | keyvalue">
+      <a [routerLink]="item.value">{{ item.key }}</a>
+    </li>
+  </ul>
+</div>
