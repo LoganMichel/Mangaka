@@ -32,9 +32,9 @@
               </button>
             </div>
             <div class="tooltip tooltip-primary" data-tip="Lire le scan">
-              <button class="btn btn-primary btn-square">
+              <a [routerLink]="'/manga/'+manga?.id+'/'+book.id+'/read'" class="btn btn-primary btn-square">
                 <span class="material-symbols-rounded">menu_book</span>
-              </button>
+              </a>
             </div>
           </td>
         </tr>

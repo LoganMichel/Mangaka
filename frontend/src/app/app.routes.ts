@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {ListComponent} from './pages/mangas/list/list.component';
 import {MangasComponent} from './pages/mangas/mangas.component';
+import {ReadComponent} from './pages/mangas/read/read.component';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,11 @@ export const routes: Routes = [
         path: ':id/list',
         component: ListComponent,
         title: "mangaka :: Liste des scans"
+      },
+      {
+        path: ':id/:bookid/read',
+        component: ReadComponent,
+        title: "mangaka :: Lecture..."
       }
     ]
   }

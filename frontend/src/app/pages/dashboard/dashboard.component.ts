@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BreadcrumbComponent} from "../../components/breadcrumb/breadcrumb.component";
-import {NgForOf, NgIf} from "@angular/common";
+import {NgForOf} from "@angular/common";
 import {Manga} from "../../models/manga";
 import {RouterLink} from "@angular/router";
 
@@ -9,7 +9,6 @@ import {RouterLink} from "@angular/router";
   imports: [
     BreadcrumbComponent,
     NgForOf,
-    NgIf,
     RouterLink,
   ],
   templateUrl: './dashboard.component.html',

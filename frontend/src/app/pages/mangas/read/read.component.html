@@ -1,0 +1,57 @@
+<div class="flex flex-col gap-4">
+  <app-breadcrumb [data]="breadcrumb"></app-breadcrumb>
+  <h1>{{ title }}</h1>
+  @if (error()) {
+    <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 text-white z-50">
+      {{ error() }}
+    </div>
+  }
+
+  @if (isLoading()) {
+    <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 text-white z-50">
+      Chargement...
+    </div>
+  }
+
+  <!-- Mode plein écran -->
+  <div
+    class="fixed inset-0 bg-black overflow-y-auto"
+    [class.hidden]="images().length === 0"
+  >
+    <!-- Barre d'outils flottante -->
+    <div
+      class="fixed top-0 left-0 right-0 bg-black bg-opacity-50 p-4 flex justify-between items-center transition-opacity duration-300"
+      [class.opacity-0]="!showControls()"
+      (mouseenter)="setControlsVisibility(true)"
+      (mouseleave)="setControlsVisibility(false)"
+    >
+      <div class="text-white">
+        {{ currentPage() + 1 }} / {{ images().length }}
+      </div>
+      <button
+        (click)="exitFullscreen()"
+        class="text-white hover:text-gray-300 px-4 py-2 rounded"
+      >
+        Quitter
+      </button>
+    </div>
+
+    <!-- Container des images -->
+    <div
+      class="min-h-screen"
+      (mousemove)="handleMouseMove()"
+    >
+      @for (image of images(); track image) {
+        <div class="flex justify-center">
+          <img
+            [src]="image"
+            alt="Page CBZ"
+            class="max-w-full h-auto"
+            loading="lazy"
+            (load)="handleImageLoad()"
+          >
+        </div>
+      }
+    </div>
+  </div>
+</div>

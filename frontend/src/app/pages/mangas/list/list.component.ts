@@ -2,12 +2,15 @@ import {Component, Input, OnInit} from '@angular/core';
 import {BreadcrumbComponent} from "../../../components/breadcrumb/breadcrumb.component";
 import {Manga} from '../../../models/manga';
 import {NgForOf} from '@angular/common';
+import {environment} from '../../../../environments/environment';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-list',
   imports: [
     BreadcrumbComponent,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
@@ -16,7 +19,7 @@ export class ListComponent implements OnInit {
   @Input() id: number | undefined;
   title?: string;
   breadcrumb: { [key: string]: string } = {};
-  public manga: Manga | undefined
+  protected manga: Manga | undefined
 
   constructor() {
     // @TODO Aller chercher les données dans la BDD backend based on the id in the URL
@@ -60,4 +63,5 @@ export class ListComponent implements OnInit {
   }
 
 
+  protected readonly environment = environment;
 }
