@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BreadcrumbComponent} from "../../components/breadcrumb/breadcrumb.component";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {Book} from "../../models/book";
 
 @Component({
@@ -8,6 +8,7 @@ import {Book} from "../../models/book";
   imports: [
     BreadcrumbComponent,
     NgForOf,
+    NgIf,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
@@ -15,6 +16,7 @@ import {Book} from "../../models/book";
 export class DashboardComponent implements OnInit {
   title?: string | undefined;
   public books: Book[] = [];
+  public isList: boolean = false;
   constructor() {
     // @TODO Aller chercher les données dans la BDD backend
     this.books = [
@@ -39,6 +41,13 @@ export class DashboardComponent implements OnInit {
         book_nb: 7,
         progress: 2
       },
+      {
+        title: "Solo Leveling",
+        cover: "https://cdn.myanimelist.net/images/manga/3/222295.jpg",
+        scan_nb: 2,
+        book_nb: 0,
+        progress: 50
+      }
       ];
   }
   ngOnInit(): void {
