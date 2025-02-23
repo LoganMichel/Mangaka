@@ -1,5 +1,6 @@
 <div class="breadcrumbs text-sm">
   <ul>
+    <li><a href="/">Ma collection</a></li>
     <li *ngFor="let item of data | keyvalue">
       <a [routerLink]="item.value">{{ item.key }}</a>
     </li>
