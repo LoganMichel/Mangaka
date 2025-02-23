@@ -1,1 +1,45 @@
-<p>list works!</p>
+<div class="flex flex-col gap-4">
+  <app-breadcrumb [data]="breadcrumb"></app-breadcrumb>
+  <div class="flex items-center justify-between">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="card border border-base-300">
+    <div class="card-body">
+      <table class="table table-compact">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Titre</th>
+          <th class="text-center">Scan possédé</th>
+          <th class="text-center">Livre possédé</th>
+          <th></th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of manga?.books">
+          <td class="w-24">
+            <img
+              class="aspect-9/12 w-16"
+              [src]="book.cover"
+              [alt]="book.title" />
+          </td>
+          <td><h3>{{ book.title }}</h3></td>
+          <td class="text-center"><span class="material-symbols-rounded fill {{ book.scan?'text-success':'text-error' }}">{{ book.scan?'check_circle':'cancel' }}</span></td>
+          <td class="text-center"><span class="material-symbols-rounded fill {{ book.book?'text-success':'text-error' }}">{{ book.book?'check_circle':'cancel' }}</span></td>
+          <td class="text-right">
+            <div class="tooltip tooltip-warning mr-2" data-tip="Modifier">
+              <button class="btn btn-warning btn-square">
+                <span class="material-symbols-rounded">edit</span>
+              </button>
+            </div>
+            <div class="tooltip tooltip-primary" data-tip="Lire le scan">
+              <button class="btn btn-primary btn-square">
+                <span class="material-symbols-rounded">menu_book</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
