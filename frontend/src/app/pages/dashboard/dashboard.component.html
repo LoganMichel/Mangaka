@@ -20,7 +20,12 @@
         </figure>
         <div class="card-body p-4">
           <h2>{{ book.title }}</h2>
-          <p class="badge bg-base-300">{{ book.number }} tomes</p>
+          <p class="badge badge-soft badge-neutral">
+            <span class="material-symbols-rounded">photo_album</span> {{ book.scan_nb }} scans
+          </p>
+          <p class="badge badge-soft badge-secondary mb-4">
+            <span class="material-symbols-rounded">book_2</span> {{ book.book_nb }} livres
+          </p>
           <p class="text-sm">Progression</p>
           <progress class="progress {{ book.progress == 100 ? 'progress-success':'' }} " value="{{ book.progress }}" max="100"></progress>
           <div class="card-actions mt-4">

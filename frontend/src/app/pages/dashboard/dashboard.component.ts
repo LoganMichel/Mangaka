@@ -21,19 +21,22 @@ export class DashboardComponent implements OnInit {
       {
         title: "Fairy Tail",
         cover: "https://cdn.myanimelist.net/images/anime/5/18179.jpg",
-        number: 27,
+        scan_nb: 27,
+        book_nb: 3,
         progress: 45
       },
       {
         title: "Naruto",
         cover: "https://cdn.myanimelist.net/images/manga/3/249658.jpg",
-        number: 12,
+        scan_nb: 12,
+        book_nb: 0,
         progress: 100
       },
       {
         title: "Demon Slayer",
         cover: "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
-        number: 3,
+        scan_nb: 16,
+        book_nb: 7,
         progress: 2
       },
       ];

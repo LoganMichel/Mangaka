@@ -1,6 +1,7 @@
 export interface Book {
   title: string;
   cover: string;
-  number: number;
+  scan_nb: number;
+  book_nb: number;
   progress: number;
 }
