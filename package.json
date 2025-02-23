@@ -2,6 +2,8 @@
   "name": "mangaka",
   "version": "1.0.0",
   "scripts": {
+    "create:env": "concurrently \"cd frontend/src/environments && cp environment.example.ts environment.ts\"",
+    "create:frontend:env": "cd frontend/src/environments && cp environment.example.ts environment.ts",
     "start:backend": "cd backend && npm run start:dev",
     "start:frontend": "cd frontend && ng serve",
     "start:frontend:ssr": "cd frontend && ng serve:ssr",
