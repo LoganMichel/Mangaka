@@ -34,10 +34,10 @@
           <p class="text-xs">Progression : <b>{{ book.progress }}%</b></p>
           <progress class="progress {{ book.progress == 100 ? 'progress-success':'' }} " value="{{ book.progress }}" max="100"></progress>
           <div class="card-actions mt-4">
-            <button class="btn btn-primary">
+            <a [routerLink]="'/manga/'+book.id+'/list'" class="btn btn-primary">
               <span class="material-symbols-rounded">menu_book</span>
               Voir les scans
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -75,10 +75,10 @@
             <p class="text-xs">{{ book.progress }}% lu</p>
           </td>
           <td>
-            <button class="btn btn-primary">
-              <span class="material-symbols-rounded">menu_book</span>
-              Voir les scans
-            </button>
+              <a [routerLink]="'/manga/'+book.id+'/list'" class="btn btn-primary">
+                  <span class="material-symbols-rounded">menu_book</span>
+                  Voir les scans
+              </a>
           </td>
         </tr>
         </tbody>
