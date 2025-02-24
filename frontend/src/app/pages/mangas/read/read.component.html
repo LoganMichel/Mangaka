@@ -38,15 +38,15 @@
 
     <!-- Container des images -->
     <div
-      class="min-h-screen"
+      class="h-screen"
       (mousemove)="handleMouseMove()"
     >
       @for (image of images(); track image) {
-        <div class="flex justify-center">
+        <div class="flex justify-center h-screen">
           <img
             [src]="image"
             alt="Page CBZ"
-            class="max-w-full h-auto"
+            class="max-w-full h-full object-contain" 
             loading="lazy"
             (load)="handleImageLoad()"
           >
