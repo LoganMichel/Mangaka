@@ -19,7 +19,7 @@ export class ProfileComponent {
   constructor(private fb: FormBuilder) {
     this.profileForm = this.fb.group({
       username: [''],
-      databaseUrl: ['']
+      bookRepositoryeUrl: ['']
     });
   }
 
@@ -32,7 +32,7 @@ export class ProfileComponent {
   onSubmit() {
     if (this.profileForm.valid) {
       console.log(this.profileForm.value);
-      // Ici, vous pourrez ajouter la logique pour sauvegarder les modifications
+      
     }
   }
 }
